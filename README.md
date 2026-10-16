@@ -79,64 +79,64 @@ The table below is sorted descending by **Company Size (Revenue / Valuation)**:
 
 Each project below includes its live stargazer count and links directly to its GitHub stargazers page. Sorted in descending order of stars:
 
-1. **[systemd](https://github.com/systemd/systemd)** [![GitHub stars](https://img.shields.io/github/stars/systemd/systemd?style=social&color=white)](https://github.com/systemd/systemd/stargazers)  
+1. **[systemd](https://github.com/systemd/systemd)** [![GitHub_Stars](https://img.shields.io/github/stars/systemd/systemd?style=social&color=white)](https://github.com/systemd/systemd/stargazers)  
    *The de facto standard Linux system and service manager* — Written in **C** (LGPL-2.1+). Features aggressive parallelization via socket and D-Bus activation, process tracking through Linux cgroups v2, declarative unit configuration (`.service`, `.socket`, `.target`, `.timer`), on-demand daemon instantiation, journal logging (`journald`), and transactional dependency resolution. Runs on >90% of contemporary Linux distributions (Debian, Fedora, Ubuntu, Arch, RHEL, CentOS, openSUSE).
 
-2. **[tini](https://github.com/krallin/tini)** [![GitHub stars](https://img.shields.io/github/stars/krallin/tini?style=social&color=white)](https://github.com/krallin/tini/stargazers)  
+2. **[tini](https://github.com/krallin/tini)** [![GitHub_Stars](https://img.shields.io/github/stars/krallin/tini?style=social&color=white)](https://github.com/krallin/tini/stargazers)  
    *A tiny but valid `init` for containers* — Written in **C** (MIT License). Reaps zombie processes and transparently forwards POSIX signals (`SIGTERM`, `SIGINT`, etc.) to child processes. Shipped natively as Docker's built-in init system (`docker run --init`) to prevent container resource leakage.
 
-3. **[Supervisor](https://github.com/Supervisor/supervisor)** [![GitHub stars](https://img.shields.io/github/stars/Supervisor/supervisor?style=social&color=white)](https://github.com/Supervisor/supervisor/stargazers)  
+3. **[Supervisor](https://github.com/Supervisor/supervisor)** [![GitHub_Stars](https://img.shields.io/github/stars/Supervisor/supervisor?style=social&color=white)](https://github.com/Supervisor/supervisor/stargazers)  
    *Client/server process control system for UNIX* — Written in **Python** (BSD-derived Repoze License). Controls project-level daemon processes without replacing PID 1. Features `supervisord` (server daemon) and `supervisorctl` (CLI controller), process groups, restart policies on unexpected exits, stdout/stderr logging with automatic log rotation, and event notification handlers.
 
-4. **[dumb-init](https://github.com/Yelp/dumb-init)** [![GitHub stars](https://img.shields.io/github/stars/Yelp/dumb-init?style=social&color=white)](https://github.com/Yelp/dumb-init/stargazers)  
+4. **[dumb-init](https://github.com/Yelp/dumb-init)** [![GitHub_Stars](https://img.shields.io/github/stars/Yelp/dumb-init?style=social&color=white)](https://github.com/Yelp/dumb-init/stargazers)  
    *A minimal, lightweight init system for Linux containers* — Written in **C** by Yelp (Apache 2.0). Solves the container PID 1 zombie process reaping and signal handling problems with a statically linked 20 KB binary that acts as a simple process supervisor proxy.
 
-5. **[s6-overlay](https://github.com/just-containers/s6-overlay)** [![GitHub stars](https://img.shields.io/github/stars/just-containers/s6-overlay?style=social&color=white)](https://github.com/just-containers/s6-overlay/stargazers)  
+5. **[s6-overlay](https://github.com/just-containers/s6-overlay)** [![GitHub_Stars](https://img.shields.io/github/stars/just-containers/s6-overlay?style=social&color=white)](https://github.com/just-containers/s6-overlay/stargazers)  
    *Container init system based on the s6 supervision suite* — Written in **C and execline** (MIT License). Provides clean multi-process supervision inside Docker/OCI containers, initialization staging scripts, log rotation, deterministic shutdown order, and fine-grained process dependencies.
 
-6. **[supervisord (Go)](https://github.com/ochinchina/supervisord)** [![GitHub stars](https://img.shields.io/github/stars/ochinchina/supervisord?style=social&color=white)](https://github.com/ochinchina/supervisord/stargazers)  
+6. **[supervisord (Go)](https://github.com/ochinchina/supervisord)** [![GitHub_Stars](https://img.shields.io/github/stars/ochinchina/supervisord?style=social&color=white)](https://github.com/ochinchina/supervisord/stargazers)  
    *A complete Go-lang implementation of Python Supervisor* — Written in **Go** (Apache 2.0). Operates as a single zero-dependency static binary with built-in HTTP management API, Prometheus metrics exporter, and compatible INI-style configuration syntax.
 
-7. **[OpenRC](https://github.com/OpenRC/openrc)** [![GitHub stars](https://img.shields.io/github/stars/OpenRC/openrc?style=social&color=white)](https://github.com/OpenRC/openrc/stargazers)  
+7. **[OpenRC](https://github.com/OpenRC/openrc)** [![GitHub_Stars](https://img.shields.io/github/stars/OpenRC/openrc?style=social&color=white)](https://github.com/OpenRC/openrc/stargazers)  
    *Dependency-based init and service manager* — Written in **C (C99) and POSIX sh** (2-Clause BSD). The primary init alternative to systemd, widely used by **Alpine Linux, Gentoo, and Artix**. Supports parallel service startup, dynamic dependency resolution (`need`, `use`, `before`, `after`), unified cgroups v2 isolation, and user services, while strictly delegating logging and network setup to dedicated utilities.
 
-8. **[Circus](https://github.com/circus-tent/circus)** [![GitHub stars](https://img.shields.io/github/stars/circus-tent/circus?style=social&color=white)](https://github.com/circus-tent/circus/stargazers)  
+8. **[Circus](https://github.com/circus-tent/circus)** [![GitHub_Stars](https://img.shields.io/github/stars/circus-tent/circus?style=social&color=white)](https://github.com/circus-tent/circus/stargazers)  
    *Process and socket manager built with ZeroMQ* — Written in **Python** (Apache 2.0). Originally created by Mozilla, Circus manages processes and network sockets concurrently, providing dynamic process scaling, resource-based flap detection, real-time metrics streaming, and a reactive HTTP dashboard.
 
-9. **[dinit](https://github.com/davmac314/dinit)** [![GitHub stars](https://img.shields.io/github/stars/davmac314/dinit?style=social&color=white)](https://github.com/davmac314/dinit/stargazers)  
+9. **[dinit](https://github.com/davmac314/dinit)** [![GitHub_Stars](https://img.shields.io/github/stars/davmac314/dinit?style=social&color=white)](https://github.com/davmac314/dinit/stargazers)  
    *Fast, dependency-based service monitoring and init system* — Written in **C++** (Apache 2.0). Default service manager for **Chimera Linux**. Features parallel service startup, clean dependency tracking, socket activation, robust daemon supervision, and immediate shutdown/reboot execution with minimal resource utilization.
 
-10. **[s6](https://github.com/skarnet/s6)** [![GitHub stars](https://img.shields.io/github/stars/skarnet/s6?style=social&color=white)](https://github.com/skarnet/s6/stargazers)  
+10. **[s6](https://github.com/skarnet/s6)** [![GitHub_Stars](https://img.shields.io/github/stars/skarnet/s6?style=social&color=white)](https://github.com/skarnet/s6/stargazers)  
     *Small, secure supervision suite and init framework* — Written in **C** by Skarnet (ISC License). Follows the Unix modular philosophy of assembling independent, highly reliable utilities (`s6-svscan`, `s6-supervise`, `s6-rc`). Renowned for mathematically verifiable correctness, zero memory allocation during runtime, and millisecond failover.
 
-11. **[Finit](https://github.com/finit-project/finit)** [![GitHub stars](https://img.shields.io/github/stars/finit-project/finit?style=social&color=white)](https://github.com/finit-project/finit/stargazers)  
+11. **[Finit](https://github.com/finit-project/finit)** [![GitHub_Stars](https://img.shields.io/github/stars/finit-project/finit?style=social&color=white)](https://github.com/finit-project/finit/stargazers)  
     *Fast, plugin-based Linux init system for embedded and server deployments* — Written in **C** (MIT License). Features SysV-compatible runlevels, hotplug device detection, process condition gating, automatic restart throttling, and built-in watchdog timer hardware integration.
 
-12. **[immortal](https://github.com/immortal/immortal)** [![GitHub stars](https://img.shields.io/github/stars/immortal/immortal?style=social&color=white)](https://github.com/immortal/immortal/stargazers)  
+12. **[immortal](https://github.com/immortal/immortal)** [![GitHub_Stars](https://img.shields.io/github/stars/immortal/immortal?style=social&color=white)](https://github.com/immortal/immortal/stargazers)  
     *Cross-platform *nix process supervisor* — Written in **Go** (BSD-3-Clause). Operates without PID files, providing a standalone supervisor that monitors long-running daemons, supports YAML/CLI configuration, forwards standard signals, and exposes a JSON REST management socket.
 
-13. **[nitro](https://github.com/leahneukirchen/nitro)** [![GitHub stars](https://img.shields.io/github/stars/leahneukirchen/nitro?style=social&color=white)](https://github.com/leahneukirchen/nitro/stargazers)  
+13. **[nitro](https://github.com/leahneukirchen/nitro)** [![GitHub_Stars](https://img.shields.io/github/stars/leahneukirchen/nitro?style=social&color=white)](https://github.com/leahneukirchen/nitro/stargazers)  
     *Tiny but flexible init system and process supervisor* — Written in **C** (CC0 / Public Domain). Features a minimalist event-driven state machine that acts as PID 1, spawns supervised worker trees, and captures signals without complex dependency graphs.
 
-14. **[Entrykit](https://github.com/progrium/entrykit)** [![GitHub stars](https://img.shields.io/github/stars/progrium/entrykit?style=social&color=white)](https://github.com/progrium/entrykit/stargazers)  
+14. **[Entrykit](https://github.com/progrium/entrykit)** [![GitHub_Stars](https://img.shields.io/github/stars/progrium/entrykit?style=social&color=white)](https://github.com/progrium/entrykit/stargazers)  
     *Entrypoint tasks and supervisor tools for container runtimes* — Written in **Go** (MIT License). Bundles task runners, environment templating (`render`), multi-process supervisors (`codep`), and signal proxies into container entrypoints.
 
-15. **[runit](https://github.com/void-linux/runit)** [![GitHub stars](https://img.shields.io/github/stars/void-linux/runit?style=social&color=white)](https://github.com/void-linux/runit/stargazers)  
+15. **[runit](https://github.com/void-linux/runit)** [![GitHub_Stars](https://img.shields.io/github/stars/void-linux/runit?style=social&color=white)](https://github.com/void-linux/runit/stargazers)  
     *Unix init scheme with service supervision* — Written in **C** (3-Clause BSD). The cornerstone of **Void Linux**. Employs a 3-stage boot model (`/etc/runit/1`, `2`, `3`), supervises services via dedicated directory symlinks (`/var/service/`), provides reliable signal control without PID files, and pairs with `svlogd` for automatic log rotation.
 
-16. **[InitWare](https://github.com/InitWare/InitWare)** [![GitHub stars](https://img.shields.io/github/stars/InitWare/InitWare?style=social&color=white)](https://github.com/InitWare/InitWare/stargazers)  
+16. **[InitWare](https://github.com/InitWare/InitWare)** [![GitHub_Stars](https://img.shields.io/github/stars/InitWare/InitWare?style=social&color=white)](https://github.com/InitWare/InitWare/stargazers)  
     *Cross-platform systemd-compatible service management middleware* — Written in **C++** (BSD License). Ports systemd-style declarative unit files and service tracking logic to BSD operating systems (FreeBSD, DragonFly BSD, NetBSD) and non-Linux POSIX kernels.
 
-17. **[Horust](https://github.com/FedericoPonzi/Horust)** [![GitHub stars](https://img.shields.io/github/stars/FedericoPonzi/Horust?style=social&color=white)](https://github.com/FedericoPonzi/Horust/stargazers)  
+17. **[Horust](https://github.com/FedericoPonzi/Horust)** [![GitHub_Stars](https://img.shields.io/github/stars/FedericoPonzi/Horust?style=social&color=white)](https://github.com/FedericoPonzi/Horust/stargazers)  
     *Modern supervisor and init system designed for containers* — Written in **Rust** (MIT License). Features TOML-based service definitions, graceful multi-stage shutdown ordering, health checks, dependency resolution, and memory safety guarantees.
 
-18. **[multirun](https://github.com/nicolas-van/multirun)** [![GitHub stars](https://img.shields.io/github/stars/nicolas-van/multirun?style=social&color=white)](https://github.com/nicolas-van/multirun/stargazers)  
+18. **[multirun](https://github.com/nicolas-van/multirun)** [![GitHub_Stars](https://img.shields.io/github/stars/nicolas-van/multirun?style=social&color=white)](https://github.com/nicolas-van/multirun/stargazers)  
     *Minimalist init process for multi-process containers* — Written in **C** (Apache 2.0). Runs multiple concurrent background commands in a single container, monitors process exits, and terminates all child processes cleanly when any primary process halts.
 
-19. **[launchd](https://github.com/apple-oss-distributions/launchd)** [![GitHub stars](https://img.shields.io/github/stars/apple-oss-distributions/launchd?style=social&color=white)](https://github.com/apple-oss-distributions/launchd/stargazers)  
+19. **[launchd](https://github.com/apple-oss-distributions/launchd)** [![GitHub_Stars](https://img.shields.io/github/stars/apple-oss-distributions/launchd?style=social&color=white)](https://github.com/apple-oss-distributions/launchd/stargazers)  
     *Apple's service management framework for macOS and Darwin* — Written in **C** (Apache 2.0 / APSL). Replaced traditional BSD init and `cron`. Controls system and user daemons via XML property lists (`.plist`), pioneering on-demand socket and Mach IPC port activation.
 
-20. **[nanoinit](https://github.com/nanopack/nanoinit)** [![GitHub stars](https://img.shields.io/github/stars/nanopack/nanoinit?style=social&color=white)](https://github.com/nanopack/nanoinit/stargazers)  
+20. **[nanoinit](https://github.com/nanopack/nanoinit)** [![GitHub_Stars](https://img.shields.io/github/stars/nanopack/nanoinit?style=social&color=white)](https://github.com/nanopack/nanoinit/stargazers)  
     *Microscopic container init* — Written in **C** (MIT License). Engineered strictly to reap zombie processes and forward signals inside ultra-lean scratch container environments.
 
 ---
@@ -178,7 +178,7 @@ Contributions are warmly encouraged! To propose updates or add new system & serv
 2. **Create a Feature Branch**: `git checkout -b feature/add-new-service-manager`.
 3. **Add Entry**:
    - For SaaS products: Include vendor, scope, company revenue/valuation, verified starting pricing, and exact free tier/trial terms.
-   - For Open-Source projects: Include repository URL, social star badge, implementation language, license, and technical summary.
+   - For Open-Source projects: Include repository URL, social Stars_Badge, implementation language, license, and technical summary.
 4. **Follow Formatting Guidelines**: Maintain alphabetical or star-ranked ordering where applicable.
 5. **Submit a Pull Request** with a concise description of your changes.
 
