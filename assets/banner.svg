@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="50%" stop-color="#0c1322"/>
+      <stop offset="100%" stop-color="#111c33"/>
+    </linearGradient>
+
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+
+    <linearGradient id="glowLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Ambient Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .circuit-line {
+        stroke-dasharray: 8 16;
+        animation: flowCircuit 20s linear infinite;
+      }
+      .circuit-line-fast {
+        stroke-dasharray: 6 14;
+        animation: flowCircuit 12s linear infinite reverse;
+      }
+      @keyframes flowCircuit {
+        to {
+          stroke-dashoffset: -400;
+        }
+      }
+      .pulse-node {
+        animation: pulseScale 3s ease-in-out infinite alternate;
+      }
+      @keyframes pulseScale {
+        0% { r: 3px; opacity: 0.4; }
+        100% { r: 5px; opacity: 0.95; }
+      }
+      .beacon-dot {
+        animation: beaconPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      @keyframes beaconPulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.3; transform: scale(1.4); }
+      }
+      .ambient-glow {
+        animation: ambientShift 8s ease-in-out infinite alternate;
+      }
+      @keyframes ambientShift {
+        0% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+        100% { transform: translate(30px, -20px) scale(1.15); opacity: 0.45; }
+      }
+      .terminal-cursor {
+        animation: cursorBlink 1s step-end infinite;
+      }
+      @keyframes cursorBlink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- Deep Background Canvas -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGradient)"/>
+
+  <!-- Border Frame -->
+  <rect width="1198" height="418" x="1" y="1" rx="15" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Background Grid Mesh -->
+  <g opacity="0.07" stroke="#94a3b8" stroke-width="1">
+    <line x1="0" y1="70" x2="1200" y2="70"/>
+    <line x1="0" y1="140" x2="1200" y2="140"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="280" x2="1200" y2="280"/>
+    <line x1="0" y1="350" x2="1200" y2="350"/>
+    <line x1="100" y1="0" x2="100" y2="420"/>
+    <line x1="250" y1="0" x2="250" y2="420"/>
+    <line x1="400" y1="0" x2="400" y2="420"/>
+    <line x1="550" y1="0" x2="550" y2="420"/>
+    <line x1="700" y1="0" x2="700" y2="420"/>
+    <line x1="850" y1="0" x2="850" y2="420"/>
+    <line x1="1000" y1="0" x2="1000" y2="420"/>
+    <line x1="1150" y1="0" x2="1150" y2="420"/>
+  </g>
+
+  <!-- Dynamic Ambient Nebula Lights -->
+  <g class="ambient-glow" filter="url(#softGlow)">
+    <circle cx="260" cy="120" r="140" fill="#38bdf8" />
+    <circle cx="940" cy="280" r="170" fill="#6366f1" />
+  </g>
+
+  <!-- Dynamic Animated Circuit / Daemon Bus Lines -->
+  <g opacity="0.4" fill="none" stroke-width="1.5">
+    <path class="circuit-line" stroke="#38bdf8" d="M -50 80 Q 200 40, 450 80 T 950 60 T 1250 80"/>
+    <path class="circuit-line-fast" stroke="#818cf8" d="M -50 360 Q 300 390, 650 340 T 1100 370 T 1250 350"/>
+    <path class="circuit-line" stroke="#a855f7" d="M 1100 -20 L 1100 180 L 1020 230 L 1020 440"/>
+    <path class="circuit-line-fast" stroke="#0ea5e9" d="M 80 -20 L 80 160 L 160 220 L 160 440"/>
+  </g>
+
+  <!-- Dynamic Process Nodes & Network Junctions -->
+  <g fill="#38bdf8" filter="url(#glow)">
+    <circle class="pulse-node" cx="160" cy="220" r="4"/>
+    <circle class="pulse-node" cx="450" cy="80" r="4" style="animation-delay: 1s;"/>
+    <circle class="pulse-node" cx="950" cy="60" r="4" style="animation-delay: 2s;"/>
+    <circle class="pulse-node" cx="1020" cy="230" r="4" style="animation-delay: 0.5s;"/>
+    <circle class="pulse-node" cx="650" cy="340" r="4" style="animation-delay: 1.5s;"/>
+  </g>
+
+  <!-- Top Status Bar & System Pills -->
+  <g transform="translate(60, 48)">
+    <!-- Pill 1: PID 1 Supervisor -->
+    <rect x="0" y="0" width="145" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <circle class="beacon-dot" cx="16" cy="14" r="4" fill="#10b981"/>
+    <text x="28" y="18" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11" font-weight="600" letter-spacing="0.5">INIT / PID 1 : ACTIVE</text>
+
+    <!-- Pill 2: Service Watchdog -->
+    <rect x="160" y="0" width="165" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <circle class="beacon-dot" cx="176" cy="14" r="4" fill="#38bdf8" style="animation-delay: 0.6s;"/>
+    <text x="188" y="18" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11" font-weight="600" letter-spacing="0.5">SUPERVISION : ON-LINE</text>
+
+    <!-- Pill 3: Ecosystem Metrics -->
+    <rect x="340" y="0" width="150" height="28" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <circle class="beacon-dot" cx="356" cy="14" r="4" fill="#a855f7" style="animation-delay: 1.2s;"/>
+    <text x="368" y="18" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11" font-weight="600" letter-spacing="0.5">DAEMON CONTROL</text>
+  </g>
+
+  <!-- MAIN FOREGROUND TITLE & BRANDING (Carefully positioned to never be occluded) -->
+  <g transform="translate(60, 130)">
+    <!-- Category Badge -->
+    <text x="0" y="0" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" letter-spacing="2">
+      ⚡ SYSTEM ARCHITECTURE &amp; SERVICE ORCHESTRATION
+    </text>
+
+    <!-- Primary Title with High Contrast -->
+    <text x="0" y="48" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif" font-size="44" font-weight="800" letter-spacing="-0.5">
+      Awesome System &amp; Service Managers
+    </text>
+    
+    <!-- Title Underline Accent -->
+    <rect x="0" y="65" width="220" height="3" rx="1.5" fill="url(#primaryGrad)"/>
+
+    <!-- Subtitle / Meta Description -->
+    <text x="0" y="98" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="400">
+      Curated directory of PID 1 inits, container process managers, daemon supervisors &amp; enterprise platforms
+    </text>
+
+    <!-- Interactive Shell / Terminal Simulation -->
+    <g transform="translate(0, 125)">
+      <rect x="0" y="0" width="1080" height="52" rx="8" fill="#030712" stroke="#1f2937" stroke-width="1"/>
+      <circle cx="20" cy="26" r="5" fill="#ef4444"/>
+      <circle cx="36" cy="26" r="5" fill="#f59e0b"/>
+      <circle cx="52" cy="26" r="5" fill="#10b981"/>
+      
+      <text x="76" y="31" fill="#64748b" font-family="'JetBrains Mono', 'Fira Code', Menlo, Consolas, monospace" font-size="13">$</text>
+      <text x="92" y="31" fill="#38bdf8" font-family="'JetBrains Mono', 'Fira Code', Menlo, Consolas, monospace" font-size="13" font-weight="600">systemctl</text>
+      <text x="175" y="31" fill="#e2e8f0" font-family="'JetBrains Mono', 'Fira Code', Menlo, Consolas, monospace" font-size="13">status --all-supervisors</text>
+      <text x="375" y="31" fill="#10b981" font-family="'JetBrains Mono', 'Fira Code', Menlo, Consolas, monospace" font-size="13">[systemd, openrc, runit, s6, supervisor, tini, dinit]</text>
+      <rect class="terminal-cursor" x="840" y="18" width="8" height="17" fill="#38bdf8"/>
+    </g>
+  </g>
+
+  <!-- Bottom Tech Tags / Architecture Pills -->
+  <g transform="translate(60, 355)">
+    <!-- Tag 1: systemd -->
+    <g transform="translate(0, 0)">
+      <rect width="90" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="45" y="18" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">systemd</text>
+    </g>
+    <!-- Tag 2: OpenRC -->
+    <g transform="translate(100, 0)">
+      <rect width="90" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="45" y="18" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">OpenRC</text>
+    </g>
+    <!-- Tag 3: runit -->
+    <g transform="translate(200, 0)">
+      <rect width="78" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="39" y="18" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">runit</text>
+    </g>
+    <!-- Tag 4: s6 -->
+    <g transform="translate(288, 0)">
+      <rect width="65" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="32" y="18" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">s6</text>
+    </g>
+    <!-- Tag 5: Supervisor -->
+    <g transform="translate(363, 0)">
+      <rect width="105" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="52" y="18" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">Supervisor</text>
+    </g>
+    <!-- Tag 6: tini -->
+    <g transform="translate(478, 0)">
+      <rect width="65" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="32" y="18" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">tini</text>
+    </g>
+    <!-- Tag 7: dinit -->
+    <g transform="translate(553, 0)">
+      <rect width="70" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="35" y="18" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">dinit</text>
+    </g>
+    <!-- Tag 8: launchd -->
+    <g transform="translate(633, 0)">
+      <rect width="85" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="42" y="18" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">launchd</text>
+    </g>
+    <!-- Tag 9: SysVinit -->
+    <g transform="translate(728, 0)">
+      <rect width="90" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="45" y="18" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">SysVinit</text>
+    </g>
+
+    <!-- Right-aligned Spec Badge -->
+    <g transform="translate(930, 0)">
+      <rect width="150" height="28" rx="6" fill="#0f172a" stroke="#0ea5e9" stroke-width="1"/>
+      <text x="75" y="18" text-anchor="middle" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11" font-weight="700">PID 1 &amp; SUPERVISION</text>
+    </g>
+  </g>
+</svg>
